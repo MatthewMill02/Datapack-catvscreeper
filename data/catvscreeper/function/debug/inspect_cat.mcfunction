@@ -1,0 +1,6 @@
+execute store result score #msg_val cvc.config run scoreboard players get @s cvc.charge
+execute if entity @s[tag=cvc.active] run tellraw @a [{"text":"[CvC] ","color":"gold"},{"selector":"@s"},{"text":" | ","color":"white"},{"text":"AKTYWNY","color":"green","bold":true},{"text":" | ladunki: ","color":"white"},{"score":{"name":"#msg_val","objective":"cvc.config"},"color":"yellow"}]
+execute unless entity @s[tag=cvc.active] if data entity @s Owner if data entity @s CustomName run tellraw @a [{"text":"[CvC] ","color":"gold"},{"selector":"@s"},{"text":" | oswojony+nazwany, czeka na tag","color":"yellow"}]
+execute unless entity @s[tag=cvc.active] if data entity @s Owner unless data entity @s CustomName run tellraw @a [{"text":"[CvC] ","color":"gold"},{"selector":"@s"},{"text":" | oswojony, brak ","color":"yellow"},{"text":"IMIENIA","color":"red","bold":true}]
+execute unless entity @s[tag=cvc.active] unless data entity @s Owner if data entity @s CustomName run tellraw @a [{"text":"[CvC] ","color":"gold"},{"selector":"@s"},{"text":" | ma imie, ","color":"yellow"},{"text":"NIE OSWOJONY","color":"red","bold":true}]
+execute unless entity @s[tag=cvc.active] unless data entity @s Owner unless data entity @s CustomName run tellraw @a [{"text":"[CvC] ","color":"gold"},{"selector":"@s"},{"text":" | dziki kot","color":"gray"}]

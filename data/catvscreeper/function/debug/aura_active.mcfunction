@@ -1,0 +1,2 @@
+execute store result score #msg_val cvc.config run scoreboard players get @s cvc.charge
+tellraw @a [{"text":"[CvC DEBUG] ","color":"dark_gray"},{"text":"Aura aktywna (ladunki >= ","color":"aqua"},{"score":{"name":"#particle_min","objective":"cvc.config"},"color":"white"},{"text":"): ","color":"aqua"},{"selector":"@s"},{"text":" | ladunki: ","color":"white"},{"score":{"name":"#msg_val","objective":"cvc.config"},"color":"gold"}]
